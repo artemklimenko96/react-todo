@@ -29,7 +29,7 @@ describe('todosReducer', () => {
             type:'ADD_TODO',
             text:'Walk with Aya'
         };
-        var res = reducers.todoReducer(df([]), df(action));
+        var res = reducers.todosReducer(df([]), df(action));
         expect(res.length).toEqual(1);
         expect(res[0].text).toEqual(action.text); 
     });
@@ -46,7 +46,7 @@ describe('todosReducer', () => {
         type: 'TOGGLE_TODO',
         id:'1212'
         };
-        var res = reducers.todoReducer(df(todos), df(action));
+        var res = reducers.todosReducer(df(todos), df(action));
         expect(res.length).toEqual(1);
         expect(res[0].completed).toEqual(false); 
         expect(res[0].completedAt).toBe(undefined);
