@@ -4,13 +4,12 @@ module.exports = {
    
     filterTodos: function(todos, showCompleted, searchText){
         var filteredTodos = todos;
-        searchText = searchText.toLowerCase();
         filteredTodos = filteredTodos.filter((todo) =>{
             return !todo.completed || showCompleted;
         });
 
         filteredTodos = filteredTodos.filter((todo) =>{
-            
+            searchText = searchText.toLowerCase();
             var text = todo.text.toLowerCase();
             return searchText.length === 0 || text.indexOf(searchText) > -1;
         
