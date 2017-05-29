@@ -136,4 +136,23 @@ describe('Actions', () =>{
       }, done)
     });
   });
+  describe('Tests with Login/Logout actions', () => {
+    it('Should generate a login action', () =>{
+       const action = {
+        type: 'LOGIN',
+        uid: '1258wdf'
+    };
+    const res = actions.login(action.uid);
+    expect(res).toEqual(action);
+    expect(res.uid).toEqual(action.uid);
+    });
+
+    it('Should generate a logout action', () =>{
+       const action = {
+        type: 'LOGOUT'
+    };
+    const res = actions.logout();
+    expect(res).toEqual(action);
+    });
+ });
 });
